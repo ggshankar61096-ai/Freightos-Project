@@ -3,8 +3,8 @@ import { fetchCharacters } from "./services/api";
 import { Character } from "./types";
 
 import CharacterList from "./components/CharacterList";
-import Pagination from "./components/pagination";
-import Filters from "./components/filters";
+import Pagination from "./components/Pagination";
+import Filters from "./components/Filters";
 import Loader from "./components/Loader";
 
 
