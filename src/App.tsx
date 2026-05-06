@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { fetchCharacters } from "@/services/api";
 import { Character } from "@/types";
-import { QUERY_DELAYS } from "@/constants/api";
 
 import MainLayout from "@/layouts/MainLayout";
 import CharacterList from "@/components/CharacterList";
