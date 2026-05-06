@@ -10,21 +10,37 @@ interface Props {
   setPage: (page: number) => void;
 }
 
+/**
+ * Pagination Component
+ * Provides navigation between character pages
+ */
 function Pagination({ info, page, setPage }: Props) {
+  const handlePrevious = () => {
+    if (info.prev) setPage(page - 1);
+  };
+
+  const handleNext = () => {
+    if (info.next) setPage(page + 1);
+  };
+
   return (
     <div className="pagination">
       <button
+        onClick={handlePrevious}
         disabled={!info.prev}
-        onClick={() => setPage(page - 1)}
+        aria-label="Previous page"
       >
         ← Prev
       </button>
 
-      <span className="page-number">Page {page}</span>
+      <span className="page-number">
+        Page {page}
+      </span>
 
       <button
+        onClick={handleNext}
         disabled={!info.next}
-        onClick={() => setPage(page + 1)}
+        aria-label="Next page"
       >
         Next →
       </button>
