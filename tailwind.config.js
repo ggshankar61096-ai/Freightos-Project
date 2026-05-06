@@ -13,6 +13,9 @@ export default {
           unknown: "#8b5cf6",
         },
       },
+      backgroundImage: {
+        rickBg: "url('/src/assets/bgRick.png')",
+    },
     },
   },
   plugins: [],
