@@ -116,10 +116,10 @@ export default function CharacterDetail() {
             <div className="space-y-3">
               {/* Name */}
               <div>
-                <h1 className="text-4xl font-bold text-white mb-2">
+                <h1 className="text-4xl font-bold text-white mb-0 py-3">
                   {character.name}
                 </h1>
-                <div className="flex items-center gap-3">
+                <div className="flex items-center justify-center gap-3 mb-2">
                   <span className={`inline-block w-3 h-3 rounded-full ${statusColor}`} />
                   <span className={`text-lg font-semibold ${statusTextColor}`}>
                     {character.status}
