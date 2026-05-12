@@ -1,7 +1,5 @@
-/**
- * Empty State Component
- * Reusable component for displaying empty state messages
- */
+//Empty State Component
+
 interface Props {
   message?: string;
 }

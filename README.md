@@ -1,6 +1,6 @@
 # Quick Start Guide
 
-## 🚀 Getting Started
+## Getting Started
 
 ### 1. Start Development Server
 ```bash
@@ -24,7 +24,7 @@ npm run preview
 npm run lint
 ```
 
-## 📁 Project Structure Quick Reference
+## Project Structure Quick Reference
 
 ```
 src/
@@ -40,126 +40,9 @@ src/
 └── index.css          → Global styles + Tailwind
 ```
 
-## 🎨 Using Tailwind CSS
 
-No need to write CSS! Use Tailwind classes directly:
 
-```tsx
-// Instead of custom CSS
-<div className="flex items-center gap-4 p-6 bg-gray-800 rounded-lg">
-  <h2 className="text-lg font-bold text-white">Title</h2>
-  <p className="text-gray-300 text-sm">Description</p>
-</div>
-```
-
-### Common Utilities
-- **Spacing**: `p-4`, `m-2`, `gap-3`
-- **Colors**: `bg-white`, `text-gray-700`, `border-red-500`
-- **Layout**: `flex`, `grid`, `gap-4`
-- **Sizing**: `w-full`, `h-12`, `min-h-[180px]`
-- **Responsive**: `md:grid-cols-2`, `lg:grid-cols-3`
-- **Hover/States**: `hover:bg-blue-500`, `disabled:opacity-50`
-
-## 🔗 Path Aliases
-
-Use these shortcuts for imports:
-
-```typescript
-// ❌ Old way
-import { api } from "../../../services/api";
-
-// ✅ New way
-import { api } from "@/services/api";
-```
-
-### Available Aliases
-- `@/` → `src/`
-- `@/components` → `src/components`
-- `@/services` → `src/services`
-- `@/hooks` → `src/hooks`
-- `@/constants` → `src/constants`
-- `@/types` → `src/types`
-- `@/utils` → `src/utils`
-- `@/styles` → `src/styles`
-
-## 🛠️ Adding Features
-
-### Create a New Component
-```typescript
-// src/components/NewComponent.tsx
-import React from "react";
-
-/**
- * NewComponent - Brief description
- * @param props - Component props
- */
-export const NewComponent: React.FC<Props> = ({ ...props }) => {
-  return (
-    <div className="flex items-center gap-4 p-4">
-      {/* Your JSX */}
-    </div>
-  );
-};
-
-export default NewComponent;
-```
-
-### Use Existing Services
-```typescript
-import { fetchCharacters } from "@/services/api";
-
-const data = await fetchCharacters({
-  page: 1,
-  name: "",
-  status: "alive",
-});
-```
-
-### Use Custom Hooks
-```typescript
-import { useDebounce } from "@/hooks";
-
-function SearchComponent() {
-  const [input, setInput] = useState("");
-  const debouncedValue = useDebounce(input, 500);
-  
-  // Use debouncedValue
-}
-```
-
-### Access Constants
-```typescript
-import { QUERY_DELAYS, CHARACTER_STATUS } from "@/constants";
-
-setTimeout(() => {
-  // ...
-}, QUERY_DELAYS.SEARCH_DEBOUNCE);
-```
-
-## 📚 Documentation Files
-
-- **[PROJECT_STRUCTURE.md](./PROJECT_STRUCTURE.md)** - Detailed structure guide
-
-## ✅ Best Practices
-
-### DO ✅
-- Use path aliases for imports
-- Define constants instead of magic values
-- Create reusable components
-- Add JSDoc comments
-- Use TypeScript types
-- Follow folder structure
-- Use Tailwind utilities
-
-### DON'T ❌
-- Mix relative imports with aliases
-- Hardcode configuration values
-- Create single-use components
-- Skip TypeScript types
-- Create custom CSS (use Tailwind)
-- Deviate from folder structure
-
-## 🐛 Troubleshooting
+##  Troubleshooting
 
 ### Build fails with CSS errors?
 ```bash
@@ -190,7 +73,7 @@ export interface YourType { ... }
 # - File extensions are correct
 ```
 
-## 📦 Dependencies
+## Dependencies
 
 ```json
 {
@@ -209,14 +92,8 @@ export interface YourType { ... }
 }
 ```
 
-## 🔄 Next Steps
 
-1. **Development**: `npm run dev`
-2. **Learn Tailwind**: Visit [tailwindcss.com](https://tailwindcss.com)
-3. **Add Features**: Follow the patterns in existing components
-4. **Build**: `npm run build` when ready for production
-
-## 📞 Common Commands
+## Common Commands
 
 ```bash
 # Development
@@ -232,8 +109,3 @@ npm list             # List installed packages
 ```
 
 ---
-
-**Your project is ready to grow!** 🎉
-
-Start building amazing features with the clean, organized structure and
-powerful Tailwind CSS styling system.

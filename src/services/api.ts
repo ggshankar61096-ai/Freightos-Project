@@ -8,11 +8,7 @@ const apiClient = axios.create({
   timeout: 10000,
 });
 
-/**
- * Fetch characters with optional filters
- * @param params - Query parameters (page, name, status)
- * @returns Character data with pagination info
- */
+// Fetch characters with optional filters API call
 export const fetchCharacters = async (
   params: FetchParams
 ): Promise<ApiResponse> => {
@@ -25,11 +21,8 @@ export const fetchCharacters = async (
   }
 };
 
-/**
- * Fetch a single character by ID
- * @param id - Character ID
- * @returns Single character data
- */
+// Fetch a single character by ID
+
 export const fetchCharacterById = async (id: string | number): Promise<Character> => {
   try {
     const response = await apiClient.get<Character>(`/${id}`);
@@ -40,19 +33,3 @@ export const fetchCharacterById = async (id: string | number): Promise<Character
   }
 };
 
-/**
- * Fetch multiple characters by IDs
- * @param ids - Array of character IDs
- * @returns Array of character data
- */
-export const fetchCharactersByIds = async (
-  ids: (string | number)[]
-): Promise<Character[]> => {
-  try {
-    const response = await apiClient.get<Character | Character[]>(`/${ids.join(",")}`);
-    return Array.isArray(response.data) ? response.data : [response.data];
-  } catch (error) {
-    console.error("Failed to fetch characters by IDs:", error);
-    throw error;
-  }
-};

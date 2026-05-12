@@ -1,7 +1,5 @@
-/**
- * Error Alert Component
- * Reusable component for displaying error messages
- */
+ // Error Alert Component
+
 interface Props {
   error: string | null;
   onClose?: () => void;

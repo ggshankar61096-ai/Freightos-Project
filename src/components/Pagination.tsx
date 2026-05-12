@@ -10,10 +10,8 @@ interface Props {
   setPage: (page: number) => void;
 }
 
-/**
- * Pagination Component
- * Provides navigation between character pages
- */
+// Pagination Component
+
 function Pagination({ info, page, setPage }: Props) {
   const handlePrevious = () => {
     if (info.prev) setPage(page - 1);

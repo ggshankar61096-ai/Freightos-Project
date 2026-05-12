@@ -5,10 +5,8 @@ interface Props {
   data: CharacterType[];
 }
 
-/**
- * Character List Component
- * Renders a responsive grid of character cards
- */
+// Character List Component
+
 function CharacterList({ data }: Props) {
   if (data.length === 0) {
     return (

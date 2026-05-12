@@ -9,6 +9,7 @@ import Filters from "@/components/Filters";
 import Loader from "@/components/Loader";
 import ErrorAlert from "@/components/ErrorAlert";
 import EmptyState from "@/components/EmptyState";
+import { isEmpty } from "@/utils/helpers";
 
 /**
  * Home Page - Lists all characters with filters and pagination
@@ -56,14 +57,14 @@ export default function HomePage() {
         {/* Content Section */}
         {loading ? (
           <Loader />
-        ) : characters.length > 0 ? (
-          <CharacterList data={characters} />
-        ) : (
+        ) : isEmpty(characters.length) ? (
           <EmptyState message="No characters found. Try adjusting your filters." />
+        ) : (
+          <CharacterList data={characters} />
         )}
 
         {/* Pagination */}
-        {!loading && characters.length > 0 && (
+        {!loading && !isEmpty(characters.length) && (
           <Pagination info={info} page={page} setPage={setPage} />
         )}
       </div>

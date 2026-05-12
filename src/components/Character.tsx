@@ -5,11 +5,9 @@ interface Props {
   character: CharacterType;
 }
 
-/**
- * Character Card Component
- * Displays individual character information with image and details
- * Clicking the card navigates to the character detail page
- */
+
+// Character Card Component
+
 function Character({ character }: Props) {
   const statusColor =
     character.status === "Alive" ? "bg-status-alive" : "bg-status-dead";

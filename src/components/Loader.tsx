@@ -1,7 +1,5 @@
-/**
- * Loader Component
- * Displays skeleton loading cards while data is being fetched
- */
+// Loader Component
+
 function Loader() {
   const skeletonCards = Array.from({ length: 4 });
 

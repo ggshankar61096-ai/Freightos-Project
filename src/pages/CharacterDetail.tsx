@@ -4,10 +4,8 @@ import { fetchCharacterById } from "@/services/api";
 import { Character } from "@/types";
 import MainLayout from "@/layouts/MainLayout";
 
-/**
- * Character Detail Page
- * Displays detailed information about a single character
- */
+//Character Detail Page
+
 export default function CharacterDetail() {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();

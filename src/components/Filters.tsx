@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useDebounce } from "@/hooks";
 import { QUERY_DELAYS } from "@/constants/api";
 
 interface Props {
@@ -7,20 +8,15 @@ interface Props {
   setName: (value: string) => void;
 }
 
-/**
- * Filters Component
- * Provides search input and status filter dropdown
- */
+//Filters Component - Search and Status Filter for Characters List
+
 function Filters({ status, setStatus, setName }: Props) {
   const [input, setInput] = useState<string>("");
+  const debouncedInput = useDebounce(input, QUERY_DELAYS.SEARCH_DEBOUNCE);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setName(input);
-    }, QUERY_DELAYS.SEARCH_DEBOUNCE);
-
-    return () => clearTimeout(timer);
-  }, [input, setName]);
+    setName(debouncedInput);
+  }, [debouncedInput, setName]);
 
   return (
     <div className="filters">
