@@ -1,50 +1,29 @@
-function SkeletonCard() {
+// Loader Component
+
+function Loader() {
+  const skeletonCards = Array.from({ length: 4 });
+
   return (
-    
-     <div className="grid">
-     <div className="card skeleton">
-      <div className="skeleton-img" />
+    <div className="grid">
+      {skeletonCards.map((_, index) => (
+        <div
+          key={index}
+          className="flex bg-gray-700 rounded-lg overflow-hidden min-h-[180px] animate-pulse shadow-lg"
+        >
+          {/* Skeleton Image */}
+          <div className="w-[180px] h-[180px] bg-gray-600 flex-shrink-0" />
 
-      <div className="card-content">
-        <div className="skeleton-text title" />
-        <div className="skeleton-text short" />
-        <div className="skeleton-text long" />
-        <div className="skeleton-text long" />
-      </div>
+          {/* Skeleton Content */}
+          <div className="flex-1 p-4 flex flex-col justify-center space-y-3">
+            <div className="bg-gray-600 rounded h-6 w-2/3" />
+            <div className="bg-gray-600 rounded h-4 w-1/3" />
+            <div className="bg-gray-600 rounded h-4 w-full" />
+            <div className="bg-gray-600 rounded h-4 w-full" />
+          </div>
+        </div>
+      ))}
     </div>
-    <div className="card skeleton">
-      <div className="skeleton-img" />
-
-      <div className="card-content">
-        <div className="skeleton-text title" />
-        <div className="skeleton-text short" />
-        <div className="skeleton-text long" />
-        <div className="skeleton-text long" />
-      </div>
-    </div>
-    <div className="card skeleton">
-      <div className="skeleton-img" />
-
-      <div className="card-content">
-        <div className="skeleton-text title" />
-        <div className="skeleton-text short" />
-        <div className="skeleton-text long" />
-        <div className="skeleton-text long" />
-      </div>
-    </div>
-    <div className="card skeleton">
-      <div className="skeleton-img" />
-
-      <div className="card-content">
-        <div className="skeleton-text title" />
-        <div className="skeleton-text short" />
-        <div className="skeleton-text long" />
-        <div className="skeleton-text long" />
-      </div>
-    </div>
-    </div>
-    
   );
 }
 
-export default SkeletonCard;
+export default Loader;
